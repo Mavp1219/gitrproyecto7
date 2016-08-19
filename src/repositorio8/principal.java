@@ -36,8 +36,8 @@ public class principal extends javax.swing.JFrame {
         txtresultado1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtresultado2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cmdborar = new javax.swing.JButton();
+        cmdborrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,21 +68,21 @@ public class principal extends javax.swing.JFrame {
         txtresultado2.setEditable(false);
         jPanel2.add(txtresultado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 170, 30));
 
-        jButton1.setText("CALCULAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cmdborar.setText("CALCULAR");
+        cmdborar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cmdborarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+        jPanel2.add(cmdborar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
-        jButton2.setText("BORRAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        cmdborrar.setText("BORRAR");
+        cmdborrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                cmdborrarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, -1));
+        jPanel2.add(cmdborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 450, 430));
 
@@ -103,7 +103,7 @@ public class principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cmdborarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborarActionPerformed
         double v1,op, d, m;
         
         v1 = Double.parseDouble(txtvalor1.getText());
@@ -117,16 +117,16 @@ public class principal extends javax.swing.JFrame {
         txtresultado1.setText(String.valueOf(d));
         txtresultado2.setText(String.valueOf(m));
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_cmdborarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void cmdborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborrarActionPerformed
         txtvalor1.setText("");
         txtresultado1.setText("");
         txtresultado2.setText("");
         
         txtvalor1.requestFocusInWindow();
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cmdborrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,8 +164,8 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton cmdborar;
+    private javax.swing.JButton cmdborrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
