@@ -5,6 +5,8 @@
  */
 package repositorio8;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -52,6 +54,12 @@ public class principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("NUMERO DE HORAS TRABAJADAS: ");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 64, 200, 30));
+
+        txtvalor1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtvalor1KeyTyped(evt);
+            }
+        });
         jPanel2.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 170, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -104,29 +112,50 @@ public class principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdborarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborarActionPerformed
-        double v1,op, d, m;
-        
-        v1 = Double.parseDouble(txtvalor1.getText());
-        
-        op = v1 * 20000;
-        
-        d= op * 5 / 100;
-        
-        m = op - d;
-        
-        txtresultado1.setText(String.valueOf(d));
-        txtresultado2.setText(String.valueOf(m));
-        
+        double v1, op, d, m;
+
+        if (txtvalor1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor ingrese su numero de horas trabajadas", "Error", JOptionPane.ERROR_MESSAGE);
+            txtvalor1.requestFocusInWindow();
+            txtvalor1.selectAll();
+        } else {
+
+            v1 = Double.parseDouble(txtvalor1.getText());
+
+            if (v1 == 0) {
+                JOptionPane.showMessageDialog(this, "No puede tener 0 horas trabajadas", "Error", JOptionPane.ERROR_MESSAGE);
+                txtvalor1.requestFocusInWindow();
+                txtvalor1.selectAll();
+            } else {
+
+                op = v1 * 20000;
+
+                d = op * 5 / 100;
+
+                m = op - d;
+
+                txtresultado1.setText(String.valueOf(d));
+                txtresultado2.setText(String.valueOf(m));
+            }
+        }
     }//GEN-LAST:event_cmdborarActionPerformed
 
     private void cmdborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborrarActionPerformed
         txtvalor1.setText("");
         txtresultado1.setText("");
         txtresultado2.setText("");
-        
+
         txtvalor1.requestFocusInWindow();
-        
+
     }//GEN-LAST:event_cmdborrarActionPerformed
+
+    private void txtvalor1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor1KeyTyped
+      char c=evt.getKeyChar();
+      if(!Character.isDigit(c)){
+          getToolkit().beep();
+          evt.consume();
+      }
+    }//GEN-LAST:event_txtvalor1KeyTyped
 
     /**
      * @param args the command line arguments
